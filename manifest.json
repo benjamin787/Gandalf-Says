@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "30-Min-Conscience",
+    "version": "0.1",
+    "description": ""
+}
+
+background script maintains timers
+    - no content script i think?
+make page background flash red/white every 2 seconds
+
+key is to decide where to store list of blocked sites and their timers
+    - hopefully not fs
+    - @match does something
+    - storage.sync if necessary
