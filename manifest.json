@@ -1,15 +1,23 @@
 {
     "manifest_version": 2,
-    "name": "30-Min-Conscience",
+    "name": "Coffee-for-the-Soul",
     "version": "0.1",
-    "description": ""
+    "description": "An extension that sends a notification every 30 minutes with an inspirational quote.",
+    "permissions": ["alarms", "notifications", "tabs"],
+    "background": {
+        "scripts": ["backgroundScript.js"]
+    }
 }
 
 background script maintains timers
     - no content script i think?
-make page background flash red/white every 2 seconds
 
-key is to decide where to store list of blocked sites and their timers
-    - hopefully not fs
-    - @match does something
-    - storage.sync if necessary
+
+
+    fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
