@@ -1,23 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "Coffee-for-the-Soul",
+    "name": "Gandalf Says",
     "version": "0.1",
     "description": "An extension that sends a notification every 30 minutes with an inspirational quote.",
-    "permissions": ["alarms", "notifications", "tabs"],
+    "permissions": ["alarms", "notifications", "idle"],
     "background": {
         "scripts": ["backgroundScript.js"]
     }
 }
-
-background script maintains timers
-    - no content script i think?
-
-
-
-    fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-  });
