@@ -3,8 +3,9 @@
     "name": "Gandalf Says",
     "version": "0.1",
     "description": "An extension that sends a notification every 30 minutes with an inspirational quote.",
-    "permissions": ["alarms", "notifications", "idle"],
+    "permissions": ["alarms", "notifications", "idle", "tabs"],
     "background": {
-        "scripts": ["backgroundScript.js"]
+        "scripts": ["backgroundScript.js"],
+        "persistent": false
     }
 }
