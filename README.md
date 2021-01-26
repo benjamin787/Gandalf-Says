@@ -7,7 +7,8 @@ Let your brain breathe! even if only for a few seconds.
 
 Fork the repo and clone to your local drive. In the top-right of your Chrome browser, click the Options menu => More Tools => Extensions
 
-![Directions](directions.png =234x)
+<!-- ![Directions](directions.png =234x) -->
+<img src='directions.png' alt='Directions' width='234' />
 
 On the extensions page, turn on Developer Mode (top-right of page). This will give you access to new commands.
 Click 'Load unpacked' and select this repo.
