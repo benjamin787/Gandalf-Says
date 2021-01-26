@@ -38,8 +38,9 @@ const startAlarm = () => {
 }
 
 const checkAlarm = activeInfo => {
-
-    chrome.alarms.get('working', alarm => alarm ? console.log('alarm found') : startAlarm())
+    chrome.alarms.get('working', alarm => {
+        alarm ? console.log('alarm found') : startAlarm()
+    })
 }
 
 console.log('hi')
@@ -51,16 +52,3 @@ chrome.idle.setDetectionInterval(1500)
 chrome.idle.onStateChanged.addListener(stopAlarm)
 
 chrome.alarms.onAlarm.addListener(findQuote)
-
-// chrome.alarms.onAlarm.addListener(async alarm => {
-//     let quote = await findQuote()
-//     console.log('QUOTE IS: ', quote)
-
-//     chrome.notifications.create({
-//         title: 'Gandalf Says',
-//         message: quote,
-//         iconUrl: '/gandalf.jpg',
-//         priority: 2,
-//         type: 'basic'
-//     })
-// })

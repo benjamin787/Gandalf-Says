@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Gandalf Says",
-    "version": "0.1",
+    "version": "0.2",
     "description": "An extension that sends a notification every 30 minutes with an inspirational quote.",
     "permissions": ["alarms", "notifications", "idle", "tabs"],
     "background": {
