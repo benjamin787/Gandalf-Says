@@ -12,16 +12,20 @@ const sendNote = quote => {
 
 const formatNote = (data) => {
     console.log('formatNote hit. here is data: ', data)
-    return `${data.text}\n   - ${data.author}`
+
+    let i = Math.floor(Math.random() * 1643)
+
+    console.log('data[i] : ', data[i])
+
+    return `${data[i].text}\n   - ${data[i].author}`
 }
 
 const parseJSON = response => response.json()
 
 
 const findQuote = () => {
-    let i = Math.floor(Math.random() * 1643)
-    console.log('findQuote fired. i = ', i)
-    fetch(`https://type.fit/api/quotes?limit=1&offset=${i}`)
+    console.log('findQuote fired')
+    fetch('https://type.fit/api/quotes')
     .then(parseJSON)
     .then(formatNote)
     .then(sendNote)
