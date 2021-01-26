@@ -1,5 +1,4 @@
 const sendNote = quote => {
-    console.log('sendNote hit')
     chrome.notifications.create({
         title: 'Gandalf Says',
         message: quote,
@@ -11,12 +10,7 @@ const sendNote = quote => {
 }
 
 const formatNote = (data) => {
-    console.log('formatNote hit. here is data: ', data)
-
     let i = Math.floor(Math.random() * 1643)
-
-    console.log('data[i] : ', data[i])
-
     return `${data[i].text}\n   - ${data[i].author}`
 }
 
@@ -24,7 +18,6 @@ const parseJSON = response => response.json()
 
 
 const findQuote = () => {
-    console.log('findQuote fired')
     fetch('https://type.fit/api/quotes')
     .then(parseJSON)
     .then(formatNote)
@@ -43,11 +36,9 @@ const startAlarm = () => {
 
 const checkAlarm = activeInfo => {
     chrome.alarms.get('working', alarm => {
-        alarm ? console.log('alarm found') : startAlarm()
+        if (!alarm) startAlarm()
     })
 }
-
-console.log('hi')
 
 chrome.tabs.onActivated.addListener(checkAlarm)
 
