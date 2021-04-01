@@ -2,7 +2,7 @@ const sendNote = quote => {
     chrome.notifications.create({
         title: 'Gandalf Says',
         message: quote,
-        iconUrl: '/gandalf.jpg',
+        iconUrl: './assets/gandalf.jpg',
         priority: 2,
         type: 'basic'
     }, notificationId => notificationId
@@ -25,13 +25,11 @@ const findQuote = () => {
 }
 
 const stopAlarm = newState => {
-    if (newState !== 'active')
-        chrome.alarms.clear('working', () => console.log('alarm cleared'))
+    if (newState !== 'active') chrome.alarms.clear('working')
 }
 
 const startAlarm = () => {
     chrome.alarms.create('working', {delayInMinutes: 30, periodInMinutes: 30})
-    console.log('alarm created')
 }
 
 const checkAlarm = activeInfo => {
